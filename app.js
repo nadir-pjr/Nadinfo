@@ -9,3 +9,10 @@ scrollContainer.addEventListener("wheel", (evt) => {
         scrollContainer.style.scrollBehavior = "smooth";
 });
 
+let scroller = document.querySelector(".bio-wrap");
+
+scroller.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scroller.scrollLeft += evt.deltaY;
+        scroller.style.scrollBehavior = "smooth";
+});
