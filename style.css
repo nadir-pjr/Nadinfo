@@ -340,8 +340,8 @@ nav {
 }
 
 .info-box-text a:hover {
-    border-left: 1px solid #ef4444 ;
-    border-right: 1px solid #ef4444 ;
+    color: #eee;
+    margin-left: 5px;
 }
 
 
@@ -493,6 +493,22 @@ nav {
     text-align: center;
 }
 
+.blog h2 {
+    color: #fff;
+    margin: 30px;
+    text-align: center;
+}
+
+.blog h1::before,
+.blog h1::after{
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background: #991b1b;
+    margin: 6px 10px;
+}
+
 .blog-posts {
     display: flex;
     flex-direction: row;
@@ -515,9 +531,14 @@ nav {
     flex-grow: 1;
 }
 
+.blog-post-1:hover{
+    background: #222;
+}
+
 .blog-post-1 h3 {
     color: #fff;
 }
+
 
 .blog-post-1 span {
     content: '';
@@ -528,6 +549,7 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 
 .blog-post-1 p {
     color: #fff;
@@ -551,6 +573,27 @@ nav {
     color: #fff;
 }
 
+.blog>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(500px);
+    margin: 10px auto;
+}
+
+.blog h2 a {
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 4px 18px;
+}
+
+
+
+
+
 @media only screen and (max-width: 480px) {
     .blog {
         padding: 10px 9px;
@@ -572,6 +615,57 @@ nav {
     }
 }
 
+/* -----banner-new  */
 
 
+.banner-new {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 40px;
+    flex-grow: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.652)), url(./assest/lines-back.png);
+    background-size: 100%;
+    background-attachment: fixed;
+}
 
+
+.banner-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.banner-post h1 {
+    color: #fff;
+    font-size: 34px;
+    margin: 30px;
+}
+
+.banner-post a {
+    color: #eee;
+    text-decoration: none;
+}
+
+.banner-post a:hover {
+    color: #cbcbcb;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 480px){
+    .banner-post h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .banner-post a {
+        font-size: 13px;
+    }
+}
