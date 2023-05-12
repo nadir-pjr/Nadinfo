@@ -67,6 +67,118 @@ body {
     scroll-behavior: smooth;
 }
 
+
+.loader {
+    width:100%;
+    height: 300vh;
+    position: absolute;
+    background: #111;
+    z-index: -10;
+    opacity: 0;
+    animation: loader 5s;
+}
+
+@keyframes loader {
+    0%{
+        opacity: 100%;
+        z-index: 99;
+    }
+    50%{
+        opacity: 100%;
+        z-index: 99;
+    }
+    100%{
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
+.loading {
+    display: flex;
+    position: absolute;
+    background: #111;
+    top: calc(15% - 32px);
+    left: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+    z-index: -5;
+    animation: loade 5s;
+}
+
+@keyframes loade {
+    0%{
+        opacity: 100%;
+        z-index: 99;
+    }
+    50%{
+        opacity: 100%;
+        z-index: 99;
+    }
+    100%{
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;  
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+    0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
 /* ------header----- */
 
 .header {
@@ -249,7 +361,7 @@ nav {
 @media only screen and (max-width: 480px){
 
     .header{
-        height: 60vh;
+        height: 70vh;
     }
 
     nav{
@@ -264,7 +376,7 @@ nav {
     }
 
     .header-text h1 {
-        font-size: 40px;
+        font-size: 49px;
     }
 
     .header-text p {
@@ -277,6 +389,21 @@ nav {
         margin: 40px auto;
     }
 
+}
+
+@media only screen and (max-width: 320px){
+    .header-text p{
+        margin-bottom: 20px;
+    }    .header{
+        height: 80vh;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    .nav-links ul li a {
+        font-size: 10px;
+        padding: 7px 13px;
+    }
 }
 
 
@@ -292,7 +419,6 @@ nav {
     display: flex;
     align-items: center;
     padding: 20px 40px 20px;
-    /* background: #0e0e0e; */
 }
 
 .top-info-wrap::-webkit-scrollbar {
@@ -306,11 +432,14 @@ nav {
 }
 
 .info-box {
-    width: 230px;
-    height: 350px;
+    width: 210px;
+    height: 360px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     margin: 10px 25px;
+    position: relative;
+    border-bottom: 2px solid #fff;
 }
 
 .info-box-img img {
@@ -318,28 +447,33 @@ nav {
 }
 
 .info-box-text {
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     text-align: center;
     padding: 12px 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.495);
     border-radius: 30px;
 }
 
 .info-box-text p {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
-    margin-bottom: 7px;
 }
 
-.info-box-text a {
-    font-size: 13px;
+.info-box-text p span {
+    color: #888888;
+}
+
+.info-box a {
+    position: absolute;
+    font-size: 14px;
     color: #ef4444 ;
     text-decoration: none;
     padding: 5px 8px;
     border-radius: 10px;
+    bottom: 0;
 }
 
-.info-box-text a:hover {
+.info-box a:hover {
     color: #eee;
     margin-left: 5px;
 }
@@ -351,7 +485,6 @@ nav {
 
 .intro {
     width: 100%;
-    /* background: #060606; */
     padding: 40px 40px;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
@@ -514,7 +647,6 @@ nav {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .blog-post-1 {
@@ -529,6 +661,8 @@ nav {
     justify-content: space-around;
     /* flex-basis: 29%; */
     flex-grow: 1;
+    border-radius: 2px;
+    position: relative;
 }
 
 .blog-post-1:hover{
@@ -553,6 +687,7 @@ nav {
 
 .blog-post-1 p {
     color: #fff;
+    line-height: 28px;
 }
 
 .blog-button button {
